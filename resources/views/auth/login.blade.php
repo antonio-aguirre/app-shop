@@ -22,13 +22,6 @@
 
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">face</i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="First Name...">
-                                </div>
-
-                                <div class="input-group">
-                                    <span class="input-group-addon">
                                         <i class="material-icons">email</i>
                                     </span>
                                     <input type="text" class="form-control" placeholder="Email...">
