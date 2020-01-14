@@ -1,7 +1,112 @@
 @extends('layouts.app')
 
+@section('page-title')
+<title>🆙</title>
+@endsection
+
+@section('body-class','signup-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
+                                     <!--Se aplica la clase 'signup-page' solo a esta parte -->
+
 @section('content')
-<div class="container">
+        <div class="header header-filter" style="background-image: url(' {{ asset('img/bg.jpg') }} '); background-size: cover; background-position: top center;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+						<div class="card card-signup">
+							<form class="form" method="" action="">
+								<div class="header header-primary text-center">
+									<h4>Sign Up</h4>
+									<div class="social-line">
+										<a href="#pablo" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-facebook-square"></i>
+										</a>
+										<a href="#pablo" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-twitter"></i>
+										</a>
+										<a href="#pablo" class="btn btn-simple btn-just-icon">
+											<i class="fa fa-google-plus"></i>
+										</a>
+									</div>
+								</div>
+								<p class="text-divider">Or Be Classical</p>
+								<div class="content">
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">face</i>
+										</span>
+										<input type="text" class="form-control" placeholder="First Name...">
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">email</i>
+										</span>
+										<input type="text" class="form-control" placeholder="Email...">
+									</div>
+
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">lock_outline</i>
+										</span>
+										<input type="password" placeholder="Password..." class="form-control" />
+									</div>
+
+									<!-- If you want to add a checkbox to this form, uncomment this code
+
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" name="optionsCheckboxes" checked>
+											Subscribe to newsletter
+										</label>
+									</div> -->
+								</div>
+								<div class="footer text-center">
+									<a href="#pablo" class="btn btn-simple btn-primary btn-lg">Get Started</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer class="footer">
+		        <div class="container">
+		            <nav class="pull-left">
+						<ul>
+							<li>
+								<a href="http://www.creative-tim.com">
+									Creative Tim
+								</a>
+							</li>
+							<li>
+								<a href="http://presentation.creative-tim.com">
+								   About Us
+								</a>
+							</li>
+							<li>
+								<a href="http://blog.creative-tim.com">
+								   Blog
+								</a>
+							</li>
+							<li>
+								<a href="http://www.creative-tim.com/license">
+									Licenses
+								</a>
+							</li>
+						</ul>
+		            </nav>
+		            <div class="copyright pull-right">
+		                &copy; 2016, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative Tim</a>
+		            </div>
+		        </div>
+		    </footer>
+
+		</div>
+@endsection
+
+<!--
+    <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -66,4 +171,4 @@
         </div>
     </div>
 </div>
-@endsection
+-->
