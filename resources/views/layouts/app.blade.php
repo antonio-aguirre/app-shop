@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://www.creative-tim.com">Creative Tim</a>
+                    <a class="navbar-brand" href="">App Shop</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navigation-example">
@@ -38,11 +38,6 @@
                         <li>
                             <a href="../components-documentation.html" target="_blank">
                                 Components
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://demos.creative-tim.com/material-kit-pro/presentation.html?ref=utp-freebie" target="_blank">
-                                <i class="material-icons">unarchive</i> Upgrade to PRO
                             </a>
                         </li>
                         <li>

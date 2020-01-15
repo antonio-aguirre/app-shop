@@ -14,8 +14,8 @@
                 <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="card card-signup">
                         <form class="form" method="" action="">
-                            <div class="header header-primary text-center">
-                                <h4>Inicio de sesión</h4>
+                            <div class="header header-secondary text-center">
+                                <h4 style="background:black;">Inicio de sesión</h4>
                             </div>
 
                             <div class="content">
@@ -54,32 +54,9 @@
 
         <footer class="footer">
             <div class="container">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="http://www.creative-tim.com">
-                                Creative Tim
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://presentation.creative-tim.com">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://blog.creative-tim.com">
-                                Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://www.creative-tim.com/license">
-                                Licenses
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="copyright pull-right">
-                    &copy; 2016, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Creative Tim</a>
+                
+                <div class="copyright right">
+                    &copy; 2019, made with <i class="fa fa-heart heart"></i> by Antonio
                 </div>
             </div>
         </footer>
