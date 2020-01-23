@@ -1,14 +1,77 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+@section('page-title')
+<title>📝</title>
+@endsection
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+@section('body-class','signup-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
+                                     <!--Se aplica la clase 'signup-page' solo a esta parte -->
+
+@section('content')
+<div class="header header-filter" style="background-image: url(' {{ asset('img/bg.jpg') }} '); background-size: cover; background-position: top center;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="card card-signup">
+                    
+                    <form method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }} <!--token csrf tiene que estar presente en todas las peticiones POST-->
+                    
+                        <div class="header header-secondary text-center" style="background:black;">
+                            <h4>Registro</h4>
+                        </div>
+
+                        <div class="content">
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                </span>
+                                <input id="email" type="email" class="form-control" placeholder="Email..." name="email" value="{{ old('email') }}" required autofocus>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">lock_outline</i>
+                                </span>
+                                <input placeholder="Password..." id="password" type="password" class="form-control" name="password" required />
+                            </div>
+
+                            <!--If you want to add a checkbox to this form, uncomment this code-->
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <!--EL helper OLD ayuda a recuperar un valor anterior escrito en un input-->
+                                    Recordar sesión
+                                </label>
+                            </div>
+                        </div>
+                        <div class="footer text-center">
+                            <button type="submit" class="btn btn-simple btn-primary btn-lg">Confirmar registro</button>
+                        </div>
+                        <!--<a class="btn btn-link" href="{{ route('password.request') }}">
+                            Forgot Your Password?
+                        </a>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            
+            <div class="copyright right">
+                &copy; 2019, made with <i class="fa fa-heart heart"></i> by Antonio
+            </div>
+        </div>
+    </footer>
+</div>
+@endsection
+
+
+<!--
+                        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -69,9 +132,4 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+-->

@@ -14,8 +14,9 @@
 
         <!-- CSS Files -->
         <!--Los asset buscan dentro la carpeta Public el contenido ubicado en su interior-->
-        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href=" {{ asset('css/bootstrap.min.css') }} " rel="stylesheet" />
         <link href=" {{ asset('css/material-kit.css') }} " rel="stylesheet"/>
+        <link rel="shortcut icon" href=" {{ asset('favicon.ico') }} ">
 
     </head>
 
