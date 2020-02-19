@@ -1,5 +1,6 @@
 <?php
 
+// a la clase Generator,dentro del paquete Faker, se le asigna el alias de Faker
 use Faker\Generator as Faker;
 
 /*

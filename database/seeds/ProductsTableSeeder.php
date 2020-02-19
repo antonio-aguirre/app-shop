@@ -11,6 +11,6 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //model factories (se generarán datos ficticios para llenar en la DB)
     }
 }
