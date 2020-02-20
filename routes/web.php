@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','TestController@welcome'); //se dirige al controlador y busca la función welcome y ejecuta lo que esté dentro
 
 Auth::routes();
 
