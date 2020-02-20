@@ -74,7 +74,10 @@
                                 <h4 class="title">{{ $product->name }} <br />
                                     <small class="text-muted">Model</small>
                                 </h4>
+
+                                <!--Descripción del producto-->
                                 <p class="description">{{ $product->description}}</p>
+
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
