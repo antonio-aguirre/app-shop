@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('page-title')
-<title>🏠</title>
+<title>App shop</title>
 @endsection
 
 @section('body-class','landing-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
 
 @section('content')
-    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1423655156442-ccc11daa4e99?crop=entropy&dpr=2&fit=crop&fm=jpg&h=750&ixjsv=2.1.0&ixlib=rb-0.3.5&q=50&w=1450');">
+    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="title">🏠👀</h1>
-                    <h4>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</h4> 
+                    <h1 class="title">Bienvenido a APP-SHOP 🛍</h1>
+                    <h4>Realización de pedidos en linea</h4> 
                 </div>
             </div>
         </div>
@@ -70,13 +70,13 @@
                         @foreach ($products as $product) <!--Se listaran todos los productos contenidos en la variable $products que se envia de TestController-->
                         <div class="col-md-3">
                             <div class="team-player">
-                                <img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle">
+                                <img src="{{ $product->images()->first()->image }}" alt="Image not found" class="img-raised img-circle">
                                 <h4 class="title">{{ $product->name }} <br />
-                                    <small class="text-muted">Model</small>
+                                    <small class="text-muted">{{ $product->category->name }}</small>
                                 </h4>
 
                                 <!--Descripción del producto-->
-                                <p class="description">{{ $product->description}}</p>
+                                <p class="description">{{ $product->description }}</p>
 
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
                                 <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
