@@ -70,7 +70,7 @@
                         @foreach ($products as $product) <!--Se listaran todos los productos contenidos en la variable $products que se envia de TestController-->
                         <div class="col-md-3">
                             <div class="team-player">
-                                <img src="{{ $product->images()->first()->image }}" alt="Image not found" class="img-raised img-circle">
+                                <img src="../assets/img/avatar.jpg" alt="Image not found" class="img-raised img-circle">
                                 <h4 class="title">{{ $product->name }} <br />
                                     <small class="text-muted">{{ $product->category->name }}</small>
                                 </h4>
