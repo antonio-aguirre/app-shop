@@ -71,7 +71,7 @@
                         <div class="col-md-3">
                             <div class="team-player">
                                 <!-- ../assets/img/avatar.jpg -->
-                                <img src="{{ $product->images()->first()->image}}" alt="Image not found" class="img-raised img-circle">
+                                <img src="{{ $product->images()->first()->image }}" alt="Image not found" class="img-raised img-circle">
                                 <h4 class="title">{{ $product->name }} <br />
                                     <small class="text-muted">{{ $product->category->name }}</small>
                                 </h4>
@@ -79,9 +79,9 @@
                                 <!--Descripción del producto-->
                                 <p class="description">{{ $product->description }}</p>
 
-                                <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
-                                <a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                <a href="#pablo" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+                                <a href="#" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
                             </div>
                         </div>
                         @endforeach
