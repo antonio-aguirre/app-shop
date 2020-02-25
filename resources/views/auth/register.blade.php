@@ -8,7 +8,7 @@
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
 
 @section('content')
-<div class="header header-filter" style="background-image: url(' {{ asset('img/bg.jpg') }} '); background-size: cover; background-position: top center;">
+<div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1520004434532-668416a08753?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'); background-size: cover; background-position: top center;">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
