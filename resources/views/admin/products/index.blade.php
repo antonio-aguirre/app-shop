@@ -4,7 +4,7 @@
 <title>Listado de productos</title>
 @endsection
 
-@section('body-class','landing-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
+@section('body-class','product-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
 
 @section('content')
@@ -17,6 +17,10 @@
 
             <div class="section text-center">
                 <h2 class="title">Listado de productos</h2>
+
+                <button type="button" class="btn btn-primary btn-round" data-toggle="tooltip" data-placement="top" title="Agregar nuevo producto">
+                    <i class="fa fa-plus"></i>
+                </button>
 
                 <div class="team">
                     <div class="row">
@@ -32,17 +36,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $count = 1; ?> <!--Contador de número de productos-->
-                                @foreach ($products as $product)
+                                @foreach ($products as $count => $product )
                                     <tr>
-                                        <td class="text-center">{{ $count }}</td>
+                                        <td class="text-center">{{ $products->firstItem() + $count }}</td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td class="text-right"> ${{ $product->price }}</td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-user"></i>
+                                                <i class="fa fa-info"></i>
                                             </button>
                                             <button type="button" rel="tooltip" title="Editar producto" class="btn btn-success btn-simple btn-xs">
                                                 <i class="fa fa-edit"></i>
@@ -52,10 +55,10 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <?php $count++; ?>
                                 @endforeach   
                             </tbody>
                         </table>
+                        {{ $products->links() }}
                     </div>
                 </div>
 

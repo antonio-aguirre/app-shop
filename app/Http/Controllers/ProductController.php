@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::get();
+        $products = Product::paginate(10);
 
         // regeresa la vista y la muestra. Tambien envia un arreglo con los Productos
         return view ('admin.products.index')->with(compact('products')); // permitirá ver el listado de productos
