@@ -71,7 +71,7 @@
             </div>
 
             <div class="section text-center">
-                <h2 class="title">Poductos disponibles</h2>
+                <h2 class="title">Poductos disponibles 👀</h2>
 
                 <div class="team">
                     <div class="row">
@@ -94,6 +94,7 @@
                         </div>
                         @endforeach
                     </div>
+                    {{ $products->render() }}
                 </div>
 
             </div>

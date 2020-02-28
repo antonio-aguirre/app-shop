@@ -58,7 +58,7 @@
                                 @endforeach   
                             </tbody>
                         </table>
-                        {{ $products->links() }}
+                        {{ $products->render() }}
                     </div>
                 </div>
 
