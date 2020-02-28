@@ -33,9 +33,7 @@
                                     <th class="col-md-4" style="text-align:center">Descripción</th>
                                     <th class="text-center">Categoría</th>
                                     <th class="text-center">Precio</th>
-                                    <th class="text-center">Info</th>
-                                    <th class="text-center">Editar</th>
-                                    <th class="text-center">Eliminar</th>
+                                    <th class="text-center">Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -50,15 +48,15 @@
                                             <a rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs" data-toggle="modal" data-target="#infoProduct{{$product->id}}">
                                                 <i class="fa fa-info"></i>
                                             </a>
-                                            @include('admin.products.info')
-                                        </td>
-                                        <td>   
+                                            @include('admin.products.info')<!--Se añade el modal para mostrar la información de los productos-->
+                                        
+                                        
                                             <a rel="tooltip" title="Editar producto" class="btn btn-warning btn-simple btn-xs" data-toggle="modal" data-target="#editProduct{{$product->id}}">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                             @include('admin.products.edit')
-                                        </td>
-                                        <td>     
+                                        
+                                           
                                             <a rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
                                                 <i class="fa fa-times"></i>
                                             </a>
