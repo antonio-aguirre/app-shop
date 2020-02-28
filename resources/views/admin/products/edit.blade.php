@@ -1,8 +1,8 @@
-<div class="modal fade" id="createProduct" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editProduct{{$product->id}}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Ingrese los datos para el nuevo producto</h4>
+        <h4 class="modal-title" id="exampleModalLabel">Edita el producto</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -8,9 +8,7 @@
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
 
 @section('content')
-    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1549281899-f75600a24107?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');">
-        
-    </div>
+    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1549281899-f75600a24107?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');"></div>
 
     <div class="main main-raised">
         <div class="container">
@@ -18,21 +16,26 @@
             <div class="section text-center">
                 <h2 class="title">Listado de productos</h2>
 
-                <button type="button" class="btn btn-primary btn-round" data-toggle="tooltip" data-placement="top" title="Agregar nuevo producto">
-                    <i class="fa fa-plus"></i>
-                </button>
+                <!--Boton para abrir el modal y agregar un producto-->
+                <span data-toggle="modal" data-target="#createProduct">
+                    <a class="btn btn-success btn-round" rel="tooltip" title="Agregar producto">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </span>
 
                 <div class="team">
-                    <div class="row">
-                        <table class="table">
-                            <thead>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
                                 <tr>
                                     <th class="text-center">#</th>
                                     <th class="col-md-3" style="text-align:center">Nombre</th>
                                     <th class="col-md-4" style="text-align:center">Descripción</th>
                                     <th class="text-center">Categoría</th>
-                                    <th class="text-right">Precio</th>
-                                    <th class="col-md-2" style="text-align:center">Opciones</th>
+                                    <th class="text-center">Precio</th>
+                                    <th class="text-center">Info</th>
+                                    <th class="text-center">Editar</th>
+                                    <th class="text-center">Eliminar</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,16 +46,26 @@
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td class="text-right"> ${{ $product->price }}</td>
-                                        <td class="td-actions text-right">
-                                            <button type="button" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
-                                                <i class="fa fa-info"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" title="Editar producto" class="btn btn-success btn-simple btn-xs">
-                                                <i class="fa fa-edit"></i>
-                                            </button>
-                                            <button type="button" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
+                                        <td>
+                                            <span data-toggle="modal" data-target="#infoProduct{{$product->id}}">
+                                                <a rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-info"></i>
+                                                </a>
+                                                @include('admin.products.info')
+                                            </span>
+                                        </td>
+                                        <td>   
+                                            <span data-toggle="modal" data-target="#editProduct{{$product->id}}"> 
+                                                <a rel="tooltip" title="Editar producto" class="btn btn-warning btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                                @include('admin.products.edit')
+                                            </span>
+                                        </td>
+                                        <td>     
+                                            <a rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
                                                 <i class="fa fa-times"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach   
@@ -65,6 +78,8 @@
             </div>
         </div>
     </div>
+    @include('admin.products.create') <!-- se cargará el modal con el formulario para crear un producto-->
+
 
     <footer class="footer">
         <div class="container">
