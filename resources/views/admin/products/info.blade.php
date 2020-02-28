@@ -1,4 +1,4 @@
-<div class="modal fade" id="infoProduct{{$product->id}}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" data-backdrop="false" id="infoProduct{{$product->id}}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
