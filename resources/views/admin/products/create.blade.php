@@ -2,18 +2,47 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Ingrese los datos para el nuevo producto</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h4 class="modal-title text-center" id="exampleModalLabel">Registrar nuevo producto</h4><hr>
       </div>
       <div class="modal-body">
-        ...
+        
+        <form action="{{ Route('products.store') }}" method="post">
+          {{ csrf_field() }}
+
+          <div class="row">
+
+            <div class="col-sm-6">
+              <div class="form-group label-floating">
+                <label class="control-label">Nombre del producto</label><br>
+                <input type="text" class="form-control" name="name">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="form-group label-floating">
+                <label class="control-label">Precio del producto</label><br>
+                <input type="number" class="form-control" name="price">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group label-floating">
+            <label class="control-label" style="text-align:left;" >Descripción corta del producto</label>
+            <input type="text" class="form-control" name="description">
+          </div>
+
+          <textarea name="long_description" class="form-control" placeholder="Descripción larga" rows="5"></textarea>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Registrar producto</button>
+          </div>
+
+        </form>
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      
     </div>
   </div>
 </div>

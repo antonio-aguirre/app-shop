@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Session;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('admin.products.create'); // permitirá ver el formulario de registro
+        return view ('admin.products'); // permitirá ver el formulario de registro
     }
 
     /**
@@ -38,7 +39,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //registrar el nuevo producto en la base de
+        //registrar el nuevo producto en la base de datos
+        $product = new Product();
+
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->long_description = $request->long_description;
+
+        if($product->save())
+        {
+            Session::flash('message','Se ha realizado el registro con éxito'); //primer palabra es el nombre que tendra la variable y se usara para mostrar el mensaje en index.blade.php
+            Session::flash('alert-class','alert-success');
+            return redirect('/admin/products');
+
+        }else
+        {
+            Session::flash('message','Se ha producido un inconveniente en el registro'); //primer palabra es el nombre que tendra la variable y se usara para mostrar el mensaje en index.blade.php
+            Session::flash('alert-class','alert-warning');
+            return redirect('/admin/products');
+        }
+        
+        dd($request->all());
+
     }
 
     /**
