@@ -26,14 +26,15 @@
                 @include('admin.products.create') <!-- se cargará el modal con el formulario para crear un producto-->
                 
                 <div class="team">
-                    <div class="table-responsive">
+                    <div class="table-responsive text-center">
 
-                    @if (Session::has('message'))
-                    <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message">
-                        {{ Session::get('message') }}
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        </div>
-                    @endif
+                        <!-- Para los mensajes y mande su alerta -->
+                        @if (Session::has('message'))
+                        <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message">
+                            {{ Session::get('message') }}
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            </div>
+                        @endif
 
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -66,7 +67,7 @@
                                             @include('admin.products.update')
                                         
                                             <a rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
-                                                <i class="fa fa-times"></i>
+                                                <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>

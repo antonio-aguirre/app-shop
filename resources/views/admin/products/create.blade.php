@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title text-center" id="exampleModalLabel">Registrar nuevo producto</h4><hr>
+        <h4 class="modal-title" id="exampleModalLabel">Registrar nuevo producto</h4><hr>
       </div>
       <div class="modal-body">
         

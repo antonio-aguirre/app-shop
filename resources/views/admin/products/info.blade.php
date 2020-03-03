@@ -8,6 +8,8 @@
         </button>
       </div>
       <div class="modal-body">
+
+        <!-- class="text-left" -->
         ...
       </div>
       <div class="modal-footer">

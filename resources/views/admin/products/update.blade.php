@@ -6,7 +6,7 @@
       </div>
       <div class="modal-body">
         
-        <form action="{{ Route('products.update',['id'=>$product->id]) }}" method="post">
+        <form action="{{ Route('products.update',['id'=>$product->id]) }}" method="post" class="text-left">
             {{ csrf_field() }}
             {{ method_field("PUT") }} <!--// esto va por default para cuando entra al metodo de Update -->
 
@@ -37,7 +37,7 @@
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary">Registrar producto</button>
+              <button type="submit" class="btn btn-primary">Actualizar producto</button>
             </div>
 
           </form>

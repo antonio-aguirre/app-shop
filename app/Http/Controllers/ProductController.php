@@ -60,7 +60,7 @@ class ProductController extends Controller
             return redirect('/admin/products');
         }
         
-        dd($request->all());
+        //dd($request->all());
 
     }
 
@@ -95,7 +95,30 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $url = $request->url();
+        //dd($url);
+
+        $product = Product::find($id);
+
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->long_description = $request->long_description;
+
+        if($product->save())
+        {
+            Session::flash('message','Se ha realizado la modificación con éxito'); //primer palabra es el nombre que tendra la variable y se usara para mostrar el mensaje en index.blade.php
+            Session::flash('alert-class','alert-success');
+            return redirect('/admin/products');
+
+        }else
+        {
+            Session::flash('message','Se ha producido un inconveniente en la modificación'); //primer palabra es el nombre que tendra la variable y se usara para mostrar el mensaje en index.blade.php
+            Session::flash('alert-class','alert-warning');
+            //return redirect('/admin/products');
+            return redirect('$url');
+        }
+
     }
 
     /**
@@ -106,6 +129,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Product::destroy($id)) {
+          Session::flash('message','Se ha eliminado con éxito');
+          Session::flash('alert-class','alert-success');
+          return redirect('/productos');
+        }else
+        {
+            Session::flash('message','Se ha produciodo un inconveniente en la eliminación');
+            Session::flash('alert-class','alert-warning');
+            return redirect('/admin/products');
+
+        }
     }
 }
