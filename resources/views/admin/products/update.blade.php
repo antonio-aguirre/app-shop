@@ -22,7 +22,7 @@
               <div class="col-sm-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Precio del producto</label><br>
-                  <input type="number" class="form-control" name="price" value="{{ $product->price }}">
+                  <input type="number" step="0.01" class="form-control" name="price" value="{{ $product->price }}">
                 </div>
               </div>
 

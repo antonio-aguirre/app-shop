@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('admin.products'); // permitirá ver el formulario de registro
+        //return view ('admin.products'); // permitirá ver el formulario de registro
     }
 
     /**
@@ -132,7 +132,7 @@ class ProductController extends Controller
         if(Product::destroy($id)) {
           Session::flash('message','Se ha eliminado con éxito');
           Session::flash('alert-class','alert-success');
-          return redirect('/productos');
+          return redirect('/admin/products');
         }else
         {
             Session::flash('message','Se ha produciodo un inconveniente en la eliminación');

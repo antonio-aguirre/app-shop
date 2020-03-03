@@ -66,7 +66,7 @@
                                             </a>
                                             @include('admin.products.update')
                                         
-                                            <a rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
+                                            <a href="{{ url('/admin/products/'.$product->id.'/delete') }}" method="post" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
