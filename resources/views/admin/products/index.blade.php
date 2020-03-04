@@ -30,10 +30,12 @@
 
                         <!-- Para los mensajes y mande su alerta -->
                         @if (Session::has('message'))
-                        <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message">
-                            {{ Session::get('message') }}
-                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message" style="border-radius: 6px;">
+                            <div class="container-fluid">
+                                <strong>{{ Session::get('message') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
                             </div>
+                        </div>
                         @endif
 
                         <table class="table table-bordered table-hover">
@@ -65,10 +67,24 @@
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                             @include('admin.products.update')
-                                        
-                                            <a href="{{ url('/admin/products/'.$product->id.'/delete') }}" method="post" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
+
+                                            <!--<span>
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                
+                                                <a href="{{ route('products.destroy', ['id' => $product->id]) }}" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </span>-->
+
+                                            <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                <button type="submit" rel="tooltip" title="Eliminar_producto" class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                            
                                         </td>
                                     </tr>
                                 @endforeach   

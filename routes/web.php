@@ -20,4 +20,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/admin/products', 'ProductController'); //listado de productos (el usuario accede al listado de los productos)
 //Route::get('/admin/products/create', 'ProductController@create'); //creación de productos (devolverá un formulario)
 //Route::post('/admin/products', 'ProductController@store'); // creación de productos (creara los productos cuando el usuario presione el botón de registro de productos)
-Route::get('/admin/products/{id}/delete','ProductController@destroy');
+
+//Route::get('/admin/products/{id}/delete','ProductController@destroy');
