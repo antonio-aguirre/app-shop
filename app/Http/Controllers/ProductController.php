@@ -40,6 +40,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        //Validar datos
+        $messages = [
+            'name.required' => 'Es necesario ingresar el nombre del producto',
+            'name.min' => 'El nombre del producto debe tener al menos 3 caracteres',
+            'description.required' => 'Es necesaria una descripción breve',
+            'description.max' => 'Se debe de tener un máximo de 200 caracteres',
+            'price.required' => 'Es necesario incluir el precio del producto',
+            'price.numeric' => 'Solo se admiten valores númericos en el precio',
+            'price.min' => 'No se admiten valores negativos en el precio',
+        ];
+        $rules = [
+            'name' => 'required|min:3',
+            'description' => 'required|max:200',
+            'price' => 'required|numeric|min:0'
+        ];
+        $this->validate($request, $rules, $messages);
+
         //registrar el nuevo producto en la base de datos
         $product = new Product();
 
@@ -98,6 +115,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Validar datos
+        $messages = [
+            'name.required' => 'Es necesario ingresar el nombre del producto',
+            'name.min' => 'El nombre del producto debe tener al menos 3 caracteres',
+            'description.required' => 'Es necesaria una descripción breve',
+            'description.max' => 'Se debe de tener un máximo de 200 caracteres',
+            'price.required' => 'Es necesario incluir el precio del producto',
+            'price.numeric' => 'Solo se admiten valores númericos en el precio',
+            'price.min' => 'No se admiten valores negativos en el precio',
+        ];
+        $rules = [
+            'name' => 'required|min:3',
+            'description' => 'required|max:200',
+            'price' => 'required|numeric|min:0'
+        ];
+        $this->validate($request, $rules, $messages);
+
         //$url = URL::full($request);
         //dd($url);
         
@@ -133,6 +167,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        /**
+         * $product = Poroduct::find($id);
+         * $product->delete();
+        */
+        
         if(Product::destroy($id)) {
           Session::flash('message','Producto eliminado');
           Session::flash('alert-class','alert alert-success');
@@ -141,7 +180,7 @@ class ProductController extends Controller
         {
             Session::flash('message','Se ha produciodo un inconveniente en la eliminación');
             Session::flash('alert-class','alert alert-warning');
-            return back(); // ya no se redirecciona por que se encuentra actualmente en el listado 
+            return back(); // solo se redirecciona a la página anterior
         }
     }
 }

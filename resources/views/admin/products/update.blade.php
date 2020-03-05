@@ -1,12 +1,12 @@
-<div class="modal fade" data-backdrop="false" id="editProduct{{$product->id}}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);">
+<div class="modal fade" data-backdrop="false" id="editProduct{{$product->id}}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); text-align:left;">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="exampleModalLabel">Edita el producto</h4>
+        <h4 class="modal-title" id="exampleModalLabel" style="text-align:center;">Edita el producto</h4>
       </div>
       <div class="modal-body">
         
-        <form action="{{ Route('products.update',['id'=>$product->id]) }}" method="post" class="text-left">
+        <form action="{{ Route('products.update',['id'=>$product->id]) }}" method="post">
             {{ csrf_field() }}
             {{ method_field("PUT") }} <!--// esto va por default para cuando entra al metodo de Update -->
 
@@ -15,14 +15,14 @@
               <div class="col-sm-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Nombre del producto</label><br>
-                  <input type="text" class="form-control" name="name" value="{{ $product->name }}">
+                  <input type="text" class="form-control" name="name" value="{{ old('name', $product->name) }}">
                 </div>
               </div>
 
               <div class="col-sm-6">
                 <div class="form-group label-floating">
                   <label class="control-label">Precio del producto</label><br>
-                  <input type="number" step="0.01" class="form-control" name="price" value="{{ $product->price }}">
+                  <input type="number" step="0.01" class="form-control" name="price" value="{{ old('price', $product->price) }}">
                 </div>
               </div>
 
@@ -30,10 +30,10 @@
 
             <div class="form-group label-floating">
               <label class="control-label" style="text-align:left;" >Descripción corta del producto</label>
-              <input type="text" class="form-control" name="description" value="{{ $product->description }}">
+              <input type="text" class="form-control" name="description" value="{{ old('description', $product->description) }}">
             </div>
 
-            <textarea name="long_description" class="form-control" placeholder="Descripción larga" rows="5">{{ $product->long_description}}</textarea>
+            <textarea name="long_description" class="form-control" placeholder="Descripción larga" rows="5">{{ old('long_description', $product->long_description) }}</textarea>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
