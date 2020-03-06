@@ -71,29 +71,30 @@
                                         <td>{{ $product->category ? $product->category->name : 'General' }}</td>
                                         <td class="text-right"> ${{ $product->price }}</td>
                                         <td>
+                                            
+
+                                            <a rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs" data-toggle="modal" data-target="#infoProduct{{$product->id}}">
+                                                <i class="fa fa-info"></i>
+                                            </a>
+                                            @include('admin.products.info')<!--Se añade el modal para mostrar la información de los productos-->
+                                        
+                                            <a rel="tooltip" title="Editar producto" class="btn btn-warning btn-simple btn-xs" data-toggle="modal" data-target="#editProduct{{$product->id}}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            @include('admin.products.update')
+
+                                            <!--<span>
+                                                {{ csrf_field() }}
+                                                {{ method_field('delete') }}
+                                                
+                                                <a href="{{ route('products.destroy', ['id' => $product->id]) }}" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-trash"></i>
+                                                </a>
+                                            </span>-->
+
                                             <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="post" >
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
-
-                                                <a rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs" data-toggle="modal" data-target="#infoProduct{{$product->id}}">
-                                                    <i class="fa fa-info"></i>
-                                                </a>
-                                                @include('admin.products.info')<!--Se añade el modal para mostrar la información de los productos-->
-                                            
-                                                <a rel="tooltip" title="Editar producto" class="btn btn-warning btn-simple btn-xs" data-toggle="modal" data-target="#editProduct{{$product->id}}">
-                                                    <i class="fa fa-edit"></i>
-                                                </a>
-                                                @include('admin.products.update')
-
-                                                <!--<span>
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('delete') }}
-                                                    
-                                                    <a href="{{ route('products.destroy', ['id' => $product->id]) }}" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-trash"></i>
-                                                    </a>
-                                                </span>-->
-
                                                 <button type="submit" rel="tooltip" title="Eliminar_producto" class="btn btn-danger btn-simple btn-xs">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
