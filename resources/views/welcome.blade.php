@@ -14,6 +14,7 @@
                 <div class="col-md-6">
                     <h1 class="title">Bienvenido a APP-SHOP 🛍</h1>
                     <h4>Realización de pedidos en linea</h4> 
+                    <?php dd(Session::get('word')); ?>
                 </div>
             </div>
         </div>
@@ -72,6 +73,7 @@
 
             <div class="section text-center">
                 <h2 class="title">Poductos disponibles 👀</h2>
+                
 
                 <div class="team">
                     <div class="row">

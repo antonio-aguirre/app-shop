@@ -26,5 +26,7 @@ Route::resource('/admin/products', 'ProductController'); //listado de productos 
 //Route::delete('/admin/products/{id}/delete','ProductController@destroy'); //eliminar producto
 
 
+
+
 //EL método GET solo se utiliza para la obtención de datos. Si se quiere registrar, enviar mail, actualizar
 // se utiliza el método POST debido a que es más seguro por que utiliza el toquen csrf

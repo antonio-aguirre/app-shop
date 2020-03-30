@@ -130,7 +130,7 @@ class ProductController extends Controller
             'description' => 'required|max:200',
             'price' => 'required|numeric|min:0'
         ];
-        $this->validate($request, $rules, $messages);
+        $this->validate($request, $rules, $messages); //se manda la solicituda a validar y las reglas a evaluar
 
         //$url = URL::full($request);
         //dd($url);
