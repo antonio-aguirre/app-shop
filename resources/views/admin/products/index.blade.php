@@ -68,7 +68,7 @@
                                         <td class="text-center">{{ $products->firstItem() + $count }}</td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->description }}</td>
-                                        <td>{{ $product->category ? $product->category->name : 'General' }}</td>
+                                        <td>{{ $product->category ? $product->category->name : 'General' }}</td> <!--Si el producto no tiene una categoria, se pone 'General' pero solo en el listado, no en la BD-->
                                         <td class="text-right"> ${{ $product->price }}</td>
                                         <td>
                                             

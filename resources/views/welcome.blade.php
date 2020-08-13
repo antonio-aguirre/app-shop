@@ -71,7 +71,7 @@
             </div>
 
             <div class="section text-center">
-                <h2 class="title">Poductos disponibles 👀</h2>
+                <h2 class="title">Poductos disponibles</h2>
                 
 
                 <div class="team">
@@ -88,9 +88,9 @@
                                 <!--Descripción del producto-->
                                 <p class="description">{{ $product->description }}</p>
 
-                                <a href="#" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
+                                <!--<a href="#" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
                                 <a href="#" class="btn btn-simple btn-just-icon"><i class="fa fa-instagram"></i></a>
-                                <a href="#" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>
+                                <a href="#" class="btn btn-simple btn-just-icon btn-default"><i class="fa fa-facebook-square"></i></a>-->
                             </div>
                         </div>
                         @endforeach
