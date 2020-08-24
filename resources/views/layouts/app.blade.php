@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 
-        @yield('page-title') <!--Sección para cargar el título de la página-->
+        <title>@yield('page-title')</title> <!--Sección para cargar el título de la página-->
 
         <!--     Fonts and icons     -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -47,6 +47,12 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    @if(Auth::user()->admin)
+                                        <li>
+                                            <a href="{{ route('products.index') }}">Gestionar productos</a>
+                                        </li>
+                                    @endif
+
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
