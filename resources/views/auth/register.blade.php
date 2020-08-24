@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title')
-<title>📝</title>
-@endsection
+@section('page-title','Registro de usuario')
 
 @section('body-class','signup-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
@@ -64,14 +62,7 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            
-            <div class="copyright right">
-                &copy; 2020, made with <i class="fa fa-heart heart"></i> by Antonio
-            </div>
-        </div>
-    </footer>
+    @include('includes.footer')
 </div>
 @endsection
 
