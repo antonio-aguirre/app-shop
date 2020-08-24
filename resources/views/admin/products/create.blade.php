@@ -35,8 +35,8 @@
           <textarea name="long_description" class="form-control" placeholder="Descripción larga" rows="5">{{ old('long_description') }}</textarea>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Registrar producto</button>
+            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary btn-simple">Registrar producto</button>
           </div>
 
         </form>
