@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title')
-<title>App shop</title>
-@endsection
+@section('page-title','App Shop')
 
 @section('body-class','landing-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->

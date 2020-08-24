@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('page-title')
-<title>Listado de productos</title>
-@endsection
+@section('page-title','Listado de productos')
 
 @section('body-class','product-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
                                      <!--Se aplica la clase 'signup-page' solo a esta parte -->
@@ -25,33 +23,33 @@
                 
                 @include('admin.products.create') <!-- se cargará el modal con el formulario para crear un producto-->
                 
+                <!-- Mensajes de alerta por validaciones -->
+                @if ($errors->any())
+                    <div class="alert alert-danger" style="border-radius: 6px; text-align:left;">
+                        <div class="container-fluid">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li><strong>{{ $error }}</strong></li>
+                                @endforeach
+                            </ul>
+                        </div>    
+                    </div>
+                @endif
+
+                <!-- Para los mensajes y mande su alerta -->
+                @if (Session::has('message'))
+                <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message" style="border-radius: 6px;">
+                    <div class="container-fluid">
+                        <strong><li>{{ Session::get('message') }}</li></strong>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                </div>
+                @endif
+
                 <div class="team">
                     <div class="table-responsive text-center">
-                        
-                        <!-- Mensajes de alerta por validaciones -->
-                        @if ($errors->any())
-                            <div class="alert alert-danger" style="border-radius: 6px; text-align:left;">
-                                <div class="container-fluid">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li><strong>{{ $error }}</li></strong>
-                                        @endforeach
-                                    </ul>
-                                </div>    
-                            </div>
-                        @endif
 
-                        <!-- Para los mensajes y mande su alerta -->
-                        @if (Session::has('message'))
-                        <div class="alert {{ Session::get('alert-class') }} col-xs-12 black-text alert-dismissable" ng-if="message" style="border-radius: 6px;">
-                            <div class="container-fluid">
-                                <strong><li>{{ Session::get('message') }}</li></strong>
-                                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                            </div>
-                        </div>
-                        @endif
-
-                        <table class="table table-bordered table-hover">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th class="text-center">#</th>
@@ -72,7 +70,6 @@
                                         <td class="text-right"> ${{ $product->price }}</td>
                                         <td>
                                             
-
                                             <a rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs" data-toggle="modal" data-target="#infoProduct{{$product->id}}">
                                                 <i class="fa fa-info"></i>
                                             </a>
@@ -95,7 +92,7 @@
                                             <form action="{{ route('products.destroy', ['id' => $product->id]) }}" method="post" >
                                                 {{ csrf_field() }}
                                                 {{ method_field('delete') }}
-                                                <button type="submit" rel="tooltip" title="Eliminar_producto" class="btn btn-danger btn-simple btn-xs">
+                                                <button type="submit" rel="tooltip" title="Eliminar producto" class="btn btn-danger btn-simple btn-xs">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
                                             </form>
