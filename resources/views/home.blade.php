@@ -1,23 +1,49 @@
 @extends('layouts.app')
 
+@section('page-title','App Shop | Dashboard')
+
+@section('body-class','product-page') <!--Se define esta sección solo para el conteido del cuerpo de la página-->
+                                     <!--Se aplica la clase 'signup-page' solo a esta parte -->
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+    <div class="header header-filter" style="background-image: url('https://images.unsplash.com/photo-1549281899-f75600a24107?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');"></div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    
+    <div class="main main-raised">
+        <div class="container" >
 
-                    You are logged in!
-                </div>
+            <div class="section">
+            
+                <h2 class="title" style="text-align:center;">Dashboard</h2>
+
+               
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+
+                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                    <li>
+                        <a href="#dashboard" role="tab" data-toggle="tab">
+                            <i class="material-icons">shopping_cart</i>
+                            Carrito de compras
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tasks" role="tab" data-toggle="tab">
+                            <i class="material-icons">list</i>
+                            Pedidos realizados
+                        </a>
+                    </li>
+                </ul>
+                
             </div>
+
         </div>
     </div>
-</div>
-@endsection
+    
+
+    @include('includes.footer')
+
+@endsection    
